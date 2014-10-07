@@ -1,0 +1,9 @@
+<h2>Posts</h2>
+
+<% @posts.each do |p| %>
+
+<p><%= p.body%>: <%= p.created_at %>: 
+	<%= link_to('Edit Post', edit_user_post_path(p.user, p)) %>: 
+	<%= link_to('Delete Post', user_post_path(p.user, p), method: :delete) %></p>
+
+<% end %>

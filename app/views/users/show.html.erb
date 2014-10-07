@@ -1,0 +1,12 @@
+<h1><%= @user.username %>'s Profile</h1>
+
+<% if @user.id == session[:user_id] %>
+<%= link_to( 'Update your account.', edit_user_path(@user))%>
+
+<% end %>
+
+<% @posts.each do |p| %>
+
+	<p><%= p.user.username %>: <%= p.body%></p>
+
+<% end %>

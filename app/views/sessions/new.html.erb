@@ -1,0 +1,18 @@
+<h2>Sign-in</h2>
+
+<%= form_tag('/sessions') do %>
+	<fieldset>
+		<div>
+			<%= label_tag(:username, 'Username') %>
+			<%= text_field_tag(:username) %>
+		</div>
+		<div>
+			<%= label_tag(:password, 'Password') %>
+			<%= text_field_tag(:password) %>
+		</div>
+		<div>
+			<%= submit_tag('Submit') %>
+		</div>
+	</fieldset>
+
+<% end %>

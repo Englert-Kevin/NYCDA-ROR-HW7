@@ -1,0 +1,11 @@
+<h1>Welcome <%= @user.username if @user %></h1>
+
+<% if @user %>
+	<%= link_to('Post something...', new_user_post_path(@user)) %>
+	<%= link_to('Edit Posts', user_posts_path(@user.id)) %>
+
+	<% @posts.each do |p| %>
+		<p><%= p.user.username %>: <%= p.body%></p>
+	<% end %>
+
+<% end %>

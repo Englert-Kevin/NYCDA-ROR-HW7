@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App14</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<ul>
+		<li><%= link_to 'Home', root_path %></li>
+		<% if session[:user_id] %>
+			<li><%= link_to 'Profile', user_path(session[:user_id]) %></li>
+			<li><%= link_to 'Users', users_path %></li>
+			<li><%= link_to('Log Out', session_path(session[:user_id]), method: :delete) %></li>
+		<% else %>
+			<li><%= link_to 'Sign Up', new_user_path %></li>
+			<li><%= link_to 'Sign In', new_session_path %></li>
+		<% end %>
+
+	</ul>
+		<%= flash[:alert] if flash[:alert] %>
+		<%= flash[:notice] if flash[:notice] %>
+
+<%= yield %>
+
+</body>
+</html>

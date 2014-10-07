@@ -1,0 +1,15 @@
+<h2>Make a post</h2>
+<br>
+<%= form_for [@user, @post] do |e| %>
+	<fieldset>
+		
+		<div>
+			<%= e.label :body %>
+			<%= e.text_field :body %>
+		</div>
+		<div>
+			<%= e.submit %>
+		</div>
+	</fieldset>
+
+<% end %>

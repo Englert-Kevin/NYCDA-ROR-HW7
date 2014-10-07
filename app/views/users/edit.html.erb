@@ -1,0 +1,26 @@
+<h2>Update your account</h2>
+<br>
+<%= form_for @user do |e| %>
+	<fieldset>
+		
+		<div>
+			<%= e.label :username %>
+			<%= e.text_field :username %>
+		</div>
+		<div>
+			<%= e.label :email %>
+			<%= e.text_field :email %>
+		</div>
+		<div>
+			<%= e.label :password %>
+			<%= e.text_field :password %>
+		</div>
+		<div>
+			<%= e.submit %>
+		</div>
+		<div>
+			<%= link_to('Delete Account', user_path(@user), method: :delete) %>
+		</div>
+	</fieldset>
+
+<% end %>
